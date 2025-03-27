@@ -4,10 +4,13 @@ import useCounterStore from "../../store/oraculus";
 import "../style/home.css"
 import Side from "../components/side";
 
-
 function Home(){
 
-   const {horoscope, currentIndex}=useCounterStore() 
+   const {horoscope, currentIndex}=useCounterStore()
+
+   document.querySelector('#datejour');
+   const currentDate=new Date();
+   const formatedDate=currentDate.toLocaleDateString();
 
    return(
       <>
@@ -16,7 +19,7 @@ function Home(){
          <section>
             <Infos />
             <article>
-               <p id="datejour">HOROSCOPE DU </p>
+               <p id="datejour">HOROSCOPE DU {formatedDate}</p>
                <h1>{horoscope[currentIndex].signe}</h1>
                <span id="date">{horoscope[currentIndex].date}</span>
                <div>

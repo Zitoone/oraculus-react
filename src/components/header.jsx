@@ -1,8 +1,6 @@
 import {Link} from 'react-router-dom'
 import useCounterStore from "../../store/oraculus";
 
-
-
 function Header(){
 
    const {next, previous}=useCounterStore()
